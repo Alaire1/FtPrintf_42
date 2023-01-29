@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 20:42:58 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/22 22:19:28 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/01/29 22:53:59 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_putnbr(int n)
 		ft_putchar('-');
 		nbr = -n;
 	}
-	if (nbr >= 10)
+	if (nbr > 9)
 		ft_putnbr(nbr / 10);
 	ft_putchar(nbr % 10 + '0');
 }

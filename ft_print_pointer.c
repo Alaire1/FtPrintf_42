@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:17:17 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/22 21:12:54 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/01/29 20:24:46 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	*hex_to_str(unsigned long n, char *base)
 	size = count_hex(n);
 	hex = (char *)malloc(sizeof(char) * (size + 1));
 	if (!hex)
-		return (NULL);
+		return (0);
 	hex[size] = '\0';
 	while (size > 0)
 	{

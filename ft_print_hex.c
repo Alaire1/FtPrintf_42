@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	count_hex(unsigned int n)
+static int	count_hex(size_t n)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ static int	count_hex(unsigned int n)
 	return (i);
 }
 
-static char	*hex_to_str(unsigned int n, char *base)
+static char	*hex_to_str(size_t n, char *base)
 {
 	int		size;
 	char	*hex;

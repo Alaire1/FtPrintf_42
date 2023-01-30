@@ -6,33 +6,33 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 18:09:25 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/22 22:22:05 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:53:43 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	print_nbr(unsigned int nb)
+static void	print_nbr(unsigned int nbr)
 {
-	if (nb <= 9)
+	if (nbr > 9)
+		ft_print_unsigned(nbr / 10);
+	if (nbr <= 9)
 	{
-		ft_putchar(nb + 48);
+		ft_putchar(nbr + 48);
 		return ;
 	}
-	if (nb > 9)
-		ft_print_unsigned(nb / 10);
-	ft_putchar((nb % 10) + 48);
+	ft_putchar((nbr % 10) + 48);
 }
 
-int	ft_print_unsigned(unsigned int nb)
+int	ft_print_unsigned(unsigned int nbr)
 {
 	unsigned int	i;
 
 	i = 1;
-	print_nbr(nb);
-	while (nb > 9)
+	print_nbr(nbr);
+	while (nbr > 9)
 	{
-		nb = nb / 10;
+		nbr = nbr / 10;
 		i++;
 	}
 	return (i);

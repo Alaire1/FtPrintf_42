@@ -6,25 +6,25 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:17:17 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/29 20:24:46 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/01/30 23:04:33 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	count_hex(unsigned long n)
+static int	count_hex(unsigned long nbr)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (n == 0)
+	len = 0;
+	if (nbr == 0)
 		return (1);
-	while (n > 0)
+	while (nbr > 0)
 	{
-		n = n / 16;
-		i++;
+		nbr = nbr / 16;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
 static char	*hex_to_str(unsigned long n, char *base)

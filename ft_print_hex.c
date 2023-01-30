@@ -6,52 +6,60 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:18:50 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/22 21:12:37 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/01/30 23:04:53 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	count_hex(size_t n)
+static int	ft_count_hex_len(unsigned int nbr)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (n == 0)
+	len = 0;
+	if (nbr == 0)
 		return (1);
-	while (n > 0)
+	while (nbr > 0)
 	{
-		n = n / 16;
-		i++;
+		nbr = nbr / 16;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
-static char	*hex_to_str(size_t n, char *base)
+static char	*hex_to_str(unsigned int nbr, char *base)
 {
 	int		size;
 	char	*hex;
 
-	size = count_hex(n);
+	size = ft_count_hex_len(nbr);
 	hex = (char *)malloc(sizeof(char) * (size + 1));
 	if (!hex)
 		return (NULL);
 	hex[size] = '\0';
 	while (size > 0)
 	{
-		hex[size - 1] = base[n % 16];
-		n = n / 16;
+		hex[size - 1] = base[nbr % 16];
+		nbr = nbr / 16;
 		size--;
 	}
 	return (hex);
 }
 
-int	ft_print_hex(unsigned int nbr, char *base)
+int	ft_print_hex(unsigned int nbr, char const character)
 {
 	char	*str;
 	int		len;
+	char	*base_big;
+	char 	*base_small;
 
-	str = hex_to_str(nbr, base);
+	base_big = "0123456789ABCDEF";
+	base_small = "0123456789abcdef";
+
+	if(character == 'X')
+		str = hex_to_str(nbr, base_big);
+	else
+		str = hex_to_str(nbr, base_small);
 	len = ft_putstr(str);
 	free(str);
 	return (len);

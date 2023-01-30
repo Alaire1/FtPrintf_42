@@ -6,13 +6,13 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 21:59:14 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/29 22:57:38 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:43:51 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_arg(const char *string, int i, va_list args)
+int	ft_printf_arg(const char *string, va_list args, int i)
 {
 	if (string[i] == 'c')
 		return (ft_putchar(va_arg(args, int)));
@@ -26,14 +26,7 @@ int	ft_printf_arg(const char *string, int i, va_list args)
 	else if (string[i] == 'u')
 		return (ft_print_unsigned(va_arg(args, unsigned int)));
 	else if (string[i] == 'X' || string[i] == 'x')
-	{
-		if (string[i] == 'X')
-			return (ft_print_hex(va_arg(args, unsigned int), \
-			"0123456789ABCDEF"));
-		else
-			return (ft_print_hex(va_arg(args, unsigned int), \
-			"0123456789abcdef"));
-	}
+			return (ft_print_hex(va_arg(args, unsigned int), string[i]));
 	else
 		return (0);
 }
@@ -51,7 +44,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%' && ft_strchr("cspdiuxX", str[i + 1]))
 		{
-			result += ft_printf_arg(str, i + 1, args);
+			result += ft_printf_arg(str, args, i +1);
 			i++;
 		}
 		else if (str[i] == '%' && str[i + 1] == '%')

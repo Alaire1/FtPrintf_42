@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 21:04:01 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/22 21:13:35 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/01/30 21:22:40 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 
 char	*ft_strchr(char const *s, int c)
 {	
-	while (*s != (unsigned char) c)
+	unsigned char character;
+
+	character = c;
+	while (*s != character)
 	{
 		if (!*s++)
 			return (NULL);

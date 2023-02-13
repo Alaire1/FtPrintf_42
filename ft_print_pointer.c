@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:17:17 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/30 23:04:33 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:54:41 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,14 @@ static char	*hex_to_str(unsigned long n, char *base)
 	return (hex);
 }
 
-int	ft_print_pointer(void *nbr, char *base)
+int	ft_print_pointer(void *nbr)
 {
 	int				len;
 	char			*str;
 	unsigned long	n;
+	char		*base;
 
+	base = "0123456789abcdef";
 	n = (unsigned long)nbr;
 	str = hex_to_str(n, base);
 	len = ft_putstr(str);

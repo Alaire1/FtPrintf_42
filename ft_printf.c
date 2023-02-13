@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 21:59:14 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/30 22:43:51 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:52:52 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int	ft_printf_arg(const char *string, va_list args, int i)
 	else if (string[i] == 's')
 		return (ft_putstr(va_arg(args, char *)));
 	else if (string[i] == 'p')
-		return (write(1, "0x", 2) + ft_print_pointer(va_arg(args, void *), \
-			"0123456789abcdef"));
+		return (write(1, "0x", 2) + ft_print_pointer(va_arg(args, void *)));
 	else if (string[i] == 'd' || string[i] == 'i')
 		return (ft_print_nbr(va_arg(args, int)));
 	else if (string[i] == 'u')

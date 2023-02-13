@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:18:50 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/30 23:04:53 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:53:31 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,20 @@ static int	ft_count_hex_len(unsigned int nbr)
 static char	*hex_to_str(unsigned int nbr, char *base)
 {
 	int		size;
-	char	*hex;
+	char	*hex_str;
 
 	size = ft_count_hex_len(nbr);
-	hex = (char *)malloc(sizeof(char) * (size + 1));
-	if (!hex)
+	hex_str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!hex_str)
 		return (NULL);
-	hex[size] = '\0';
+	hex_str[size] = '\0';
 	while (size > 0)
 	{
-		hex[size - 1] = base[nbr % 16];
+		hex_str[size - 1] = base[nbr % 16];
 		nbr = nbr / 16;
 		size--;
 	}
-	return (hex);
+	return (hex_str);
 }
 
 int	ft_print_hex(unsigned int nbr, char const character)

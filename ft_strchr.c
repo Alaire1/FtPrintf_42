@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 21:04:01 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/30 21:22:40 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/02/13 01:55:20 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //locate first occurence of character in string
 
-char	*ft_strchr(char const *s, int c)
+char	*ft_strchr(char *s, int c)
 {	
 	unsigned char character;
 
@@ -26,3 +26,4 @@ char	*ft_strchr(char const *s, int c)
 	}
 	return ((char *)s);
 }
+

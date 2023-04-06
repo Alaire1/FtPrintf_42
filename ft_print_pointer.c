@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:17:17 by akaraban          #+#    #+#             */
-/*   Updated: 2023/02/13 01:54:41 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/02/13 18:43:19 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_print_pointer(void *nbr)
 	int				len;
 	char			*str;
 	unsigned long	n;
-	char		*base;
+	char			*base;
 
 	base = "0123456789abcdef";
 	n = (unsigned long)nbr;

@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:14:57 by akaraban          #+#    #+#             */
-/*   Updated: 2023/01/30 21:44:38 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/02/13 18:44:45 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putstr(char *str)
 {
 	int	len;
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
@@ -27,4 +27,3 @@ int	ft_putstr(char *str)
 	write(1, &str[i], len);
 	return (len);
 }
-

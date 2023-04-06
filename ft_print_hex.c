@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 15:18:50 by akaraban          #+#    #+#             */
-/*   Updated: 2023/02/13 01:53:31 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/02/13 18:42:52 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,11 @@ int	ft_print_hex(unsigned int nbr, char const character)
 	char	*str;
 	int		len;
 	char	*base_big;
-	char 	*base_small;
+	char	*base_small;
 
 	base_big = "0123456789ABCDEF";
 	base_small = "0123456789abcdef";
-
-	if(character == 'X')
+	if (character == 'X')
 		str = hex_to_str(nbr, base_big);
 	else
 		str = hex_to_str(nbr, base_small);

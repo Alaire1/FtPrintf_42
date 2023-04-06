@@ -6,7 +6,7 @@
 /*   By: akaraban <akaraban@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 22:00:47 by akaraban          #+#    #+#             */
-/*   Updated: 2023/02/13 01:55:49 by akaraban         ###   ########.fr       */
+/*   Updated: 2023/04/07 00:48:50 by akaraban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stddef.h>
 
 int		ft_print_hex(unsigned int nbr, const char character);
 int		ft_print_pointer(void *nbr);
